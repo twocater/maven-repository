@@ -18,6 +18,8 @@
 
         <!-- github server corresponds to entry in ~/.m2/settings.xml -->
         <github.global.server>github</github.global.server>
+        <!--<github.global.userName>784615815@qq.com</github.global.userName>-->
+        <!--<github.global.password>c1c4715d0f6e3ad45396fff13766946862586b52</github.global.password>-->
     </properties>
 
     <build>
