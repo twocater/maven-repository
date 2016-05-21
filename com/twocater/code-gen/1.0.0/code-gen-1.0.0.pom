@@ -117,9 +117,9 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
                 <!--<configuration>-->
-                    <!--<altDeploymentRepository>-->
-                        <!--internal.repository::default::file://${project.build.directory}/mvn-repository-->
-                    <!--</altDeploymentRepository>-->
+                <!--<altDeploymentRepository>-->
+                <!--internal.repository::default::file://${project.build.directory}/mvn-repository-->
+                <!--</altDeploymentRepository>-->
                 <!--</configuration>-->
             </plugin>
 
@@ -134,8 +134,11 @@
                     <outputDirectory>${project.build.directory}/mvn-repository
                     </outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/master</branch>                       <!-- remote branch name -->
+                    <!--&lt;!&ndash;<includes>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<include>**/*</include>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</includes>&ndash;&gt;-->
                     <!--<includes>-->
-                        <!--<include>**/*</include>-->
+                        <!--<include>${artifactId}-${version}.jar</include>-->
                     <!--</includes>-->
                     <repositoryName>maven-repository</repositoryName>      <!-- github repo name -->
                     <repositoryOwner>twocater</repositoryOwner>    <!-- github username  -->
