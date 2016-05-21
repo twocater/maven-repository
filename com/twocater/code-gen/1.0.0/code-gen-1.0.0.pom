@@ -52,6 +52,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.6</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.class</include>
+                        <include>vm/*</include>
+                    </includes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>dao</id>
@@ -111,7 +117,9 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
                 <configuration>
-                    <altDeploymentRepository>internal.repository::default::file://${project.build.directory}/mvn-repository</altDeploymentRepository>
+                    <altDeploymentRepository>
+                        internal.repository::default::file://${project.build.directory}/mvn-repository
+                    </altDeploymentRepository>
                 </configuration>
             </plugin>
 
@@ -123,7 +131,8 @@
                     <merge>true</merge>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/mvn-repository</outputDirectory> <!-- matches distribution management repository url above -->
+                    <outputDirectory>${project.build.directory}/mvn-repository
+                    </outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/master</branch>                       <!-- remote branch name -->
                     <includes>
                         <include>**/*</include>
@@ -177,11 +186,11 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>com.xunlei.game</groupId>-->
-            <!--<artifactId>code-gen-dao</artifactId>-->
-            <!--<version>1.0.0</version>-->
-            <!--<systemPath>${project.libbasedir}/code-gen-1.0.0-dao.jar</systemPath>-->
-            <!--<scope>system</scope>-->
+        <!--<groupId>com.xunlei.game</groupId>-->
+        <!--<artifactId>code-gen-dao</artifactId>-->
+        <!--<version>1.0.0</version>-->
+        <!--<systemPath>${project.libbasedir}/code-gen-1.0.0-dao.jar</systemPath>-->
+        <!--<scope>system</scope>-->
         <!--</dependency>-->
     </dependencies>
 
