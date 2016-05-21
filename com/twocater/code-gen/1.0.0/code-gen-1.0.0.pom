@@ -60,6 +60,7 @@
                     <excludes>
                         <exclude>db.properties</exclude>
                         <exclude>logback_.xml</exclude>
+                        <exclude>config.properties</exclude>
                     </excludes>
                 </configuration>
                 <executions>
