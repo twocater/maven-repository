@@ -53,10 +53,14 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <includes>
-                        <include>**/*.class</include>
-                        <include>vm/*</include>
-                    </includes>
+                    <!--<includes>-->
+                        <!--<include>**/*.class</include>-->
+                        <!--<include>vm/*</include>-->
+                    <!--</includes>-->
+                    <excludes>
+                        <exclude>db.properties</exclude>
+                        <exclude>logback_.xml</exclude>
+                    </excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -134,11 +138,8 @@
                     <outputDirectory>${project.build.directory}/mvn-repository
                     </outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/master</branch>                       <!-- remote branch name -->
-                    <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<include>**/*</include>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</includes>&ndash;&gt;-->
                     <!--<includes>-->
-                        <!--<include>${artifactId}-${version}.jar</include>-->
+                    <!--<include>**/*</include>-->
                     <!--</includes>-->
                     <repositoryName>maven-repository</repositoryName>      <!-- github repo name -->
                     <repositoryOwner>twocater</repositoryOwner>    <!-- github username  -->
